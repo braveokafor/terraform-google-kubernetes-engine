@@ -261,4 +261,10 @@ resource "google_container_cluster" "primary" {
       topic   = var.notification_config_topic
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      private_cluster_config
+    ]
+  }
 }
